@@ -13,6 +13,13 @@
         }
     }
 
+    /************************************************
+     klasa: StringHelper
+     opis: Klasa reprezentuje obiekt zawierający metody do analizy i modyfikacji łańcuchów znaków (string).
+     metody: countVovels - metoda typu int zwracająca liczbę samogłosek w przekazanym jako jej parametr łańcuchu znaków.
+             removeRepetitions - metoda typu string zwracająca łańcuch znaków, w którym usunięte zostały powtarzające się obok siebie znaki w podanym jako jej parametr łańcuchu znaków (aabba -> aba).
+     autor: PESEL
+    ************************************************/
     public static class StringHelper
     {
         public static int countVovels(string text)
