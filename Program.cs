@@ -4,8 +4,12 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(StringHelper.countVovels("aab"));
-            Console.WriteLine(StringHelper.removeRepetitions("aaabba"));
+            Console.WriteLine("Proszę podać dowolny łańcuch znaków: ");
+            string text = Console.ReadLine();
+            Console.WriteLine("Liczba samogłosek w podanym łańcuchu znaków: ");
+            Console.WriteLine(StringHelper.countVovels(text));
+            Console.WriteLine("Łańcuch znaków po wyeliminowaniu powtarzających się obok siebie znaków: ");
+            Console.WriteLine(StringHelper.removeRepetitions(text));
         }
     }
 
@@ -37,22 +41,22 @@
 
         public static string removeRepetitions(string text)
         {
-            string stringWithoutRepetitions = text[0].ToString();
-
             if (text == null || string.IsNullOrEmpty(text))
             {
                 return String.Empty;
             }
 
+            string stringWithoutRepetitions = text[0].ToString();   
+
             char currentCharacter = text[0];
-            for (int i = 0; i < text.Length; i++)
+            for (int i = 0; i < text.Length -1; i++)
             {
-                if(i < text.Length - 1 && currentCharacter != text[i + 1])
+                if(currentCharacter != text[i + 1])
                 {
                     stringWithoutRepetitions += text[i + 1];
                 }
 
-                currentCharacter = text[i];
+                currentCharacter = text[i + 1];
             }
 
             return stringWithoutRepetitions;
